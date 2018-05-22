@@ -1,0 +1,41 @@
+
+<div class="nav_wrapper">
+    <div class="fl logo">
+        <img src="/image/logo.png">
+    </div>
+    <ul class="nav fr">
+        <%if(name=="index"){%>
+          <li class="active fl"><a class="" href="/">首页</a></li>
+        <%}else{%>
+        <li class="fl"><a class="" href="/">首页</a></li>
+        <%}%>
+        <%if(name=="produce"){%>
+        <li class="has_sub_menu active fl">
+            <a href="javascript:void(0)">产品中心</a>
+            <ul class="drop_down">
+                <li> <a href="/platform">云病房管理平台</a></li>
+                <li> <a href="/dev">米可智能一体机</a></li>
+                <li> <a href="/doctor">蜂鸟医生</a></li>
+                <li> <a href="/user">蜂鸟健康</a></li>
+            </ul>
+        </li>
+        <%}else{%>
+        <li class="has_sub_menu fl">
+            <a href="javascript:void(0)">产品中心</a>
+            <ul class="drop_down">
+                <li> <a href="/platform">云病房管理平台</a></li>
+                <li> <a href="/dev">米可智能一体机</a></li>
+                <li> <a href="/doctor">蜂鸟医生</a></li>
+                <li> <a href="/user">蜂鸟健康</a></li>
+            </ul>
+        </li>
+        <%}%>
+        <%if(name=="about"){%>
+          <li class="active fl"><a  href="/about">关于我们</a></li>
+        <%}else{%>
+        <li class="fl"><a href="/about">关于我们</a></li>
+        <%}%>
+        <li class="clearBoth"></li>
+    </ul>
+    <div class="clearBoth"></div>
+</div>

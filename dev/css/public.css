@@ -1,0 +1,53 @@
+/*color*/
+/*font*/
+.nav_hover {
+  content: "";
+  position: absolute;
+  background-color: #ffffff;
+  bottom: 0;
+  left: 50%;
+  margin-left: -7px;
+  height: 2px;
+  width: 14px;
+  -webkit-border-radius: 1px;
+  border-radius: 1px;
+  z-index: 1; }
+
+.cyan {
+  color: #3FCCF4; }
+
+.dark {
+  color: #3D4859; }
+
+.gray {
+  color: #8492A8; }
+
+.clearLeft {
+  margin-left: 0 !important; }
+
+.clearRight {
+  margin-right: 0 !important; }
+
+.clearBottom {
+  margin-bottom: 0 !important; }
+
+.text_left {
+  text-align: left; }
+
+.text_right {
+  text-align: right; }
+
+.text_center {
+  text-align: center; }
+
+.downBtn {
+  width: 160px;
+  height: 50px;
+  -webkit-border-radius: 26px;
+  border-radius: 26px;
+  background: rgba(255, 255, 255, 0.38);
+  font-size: 20px;
+  color: #ffffff;
+  text-align: left;
+  line-height: 50px;
+  cursor: pointer; }

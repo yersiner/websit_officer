@@ -1,0 +1,16 @@
+.index_header,.state_header,.about_header,.p_doctor_header,.p_plat_header,.p_dev_header,.p_user_header{
+  background-color: #1FB6FF;
+}
+.has_sub_menu{
+  z-index: 1000;
+}
+.drop_down{
+  border: 1px solid #7CD4FF;
+}
+.nav_wrapper .drop_down{
+  height: 200px;
+  z-index: 1000;
+}
+.p_user_header .nav_wrapper .drop_down li a,.p_doctor_header  .nav_wrapper .drop_down li a{
+  color:#3D4859;
+}

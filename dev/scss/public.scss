@@ -1,0 +1,107 @@
+/*color*/
+$cyan : #3FCCF4;
+$white : #ffffff;
+$dark : #3D4859;
+$gray : #8492A8;
+$blue : #1FB6FF;
+$center_gray : #001E00;
+$b_gray : #F7FAFF;
+$ligter_blue : #7CD4FF;
+$ligter_white : #F7FBFF;
+$dark_gray : #262D37;
+$red : #F9316E;
+/*font*/
+$font12 : 12px;
+$font14 : 14px;
+$font16 : 16px;
+$font26 : 26px;
+$font40 : 40px;
+$font20 : 20px;
+$font60 : 60px;
+
+
+@mixin getFont($font,$color,$other:left){
+  font-size: $font;
+  color: $color;
+  text-align: $other;
+}
+@mixin clearMargin($directive:left){
+  margin-#{$directive}:0!important;
+}
+@mixin setBackground($url,$color,$position:center){
+  @if($url==none){
+    background-color:$color;
+  }@else{
+    @if($color==none){
+      background: url($url) no-repeat $position;
+    }@else{
+      background: url($url) no-repeat $position,$color;
+    }
+    background-size: cover;
+  }
+}
+@mixin setMoreBg($url,$color,$px : rigth,$py:bottom){
+  @if($url==none){
+    background-color:$color;
+  }@else {
+    background: url($url) no-repeat $px  $py ,$color;
+  }
+}
+@mixin getPosition($x,$y,$x_value:0,$y_value:0){
+  position: absolute;
+  @if($x==left){
+    left: $x_value;
+    @if($y==bottom){
+      bottom: $y_value;
+    }@else{
+    top: $y_value;
+  }
+  }@else if($x==rigth){
+    right: $x_value;
+    @if($y==bottom){
+      bottom: $y_value;
+    }@else{
+      top: $y_value;
+    }
+  }@else {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+.nav_hover{
+  content: "";
+  position: absolute;
+  background-color: $white;
+  bottom:0;
+  left: 50%;
+  margin-left: -7px;
+  height: 2px;
+  width: 14px;
+  border-radius: 1px;
+  z-index: 1;
+}
+.cyan{color: $cyan}
+.dark{color:$dark}
+.gray{color:$gray}
+.clearLeft{
+  @include clearMargin(left);
+}
+.clearRight{
+  @include clearMargin(right);
+}
+.clearBottom{
+  @include clearMargin(bottom)
+}
+.text_left{text-align: left}
+.text_right{text-align: right}
+.text_center{text-align: center}
+.downBtn{
+  width: 160px;
+  height: 50px;
+  border-radius:26px;
+  background: rgba(255,255,255,0.38);
+  @include getFont($font20,$white,left);
+  line-height: 50px;
+  cursor: pointer;
+}

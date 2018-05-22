@@ -1,0 +1,732 @@
+@import "./normal.scss";
+@import "./public.scss";
+@import "./animate.scss";
+*{box-sizing: border-box}
+.fl{float: left}
+.fr{float: right}
+.clearBoth{clear: both;font-size: 0;line-height: 0}
+.inner{max-width:1200px;width: 100%;position: relative;margin:0 auto;_width:1200px;}
+.hide{display: none!important;}
+.public_header{
+  height: 600px;
+}
+.has_sub_menu{position: relative}
+.p_drop{
+  background:  rgba(124,212,255,0.7)!important;
+}
+.bf{
+  background: $white;
+}
+.fixed_top{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+/**
+*首页
+**/
+.index_header{
+  height: 800px;
+  @include setMoreBg("../image/i_b_b.png",$blue,center,bottom);
+}
+.about_header{
+  @include setBackground("../image/about_bg.jpg",$blue);
+  @extend .public_header;
+}
+.p_user_header{
+  @include setBackground("../image/p_u_b.png",$blue);
+  @extend .public_header;
+  .drop_down{
+    @extend .p_drop;
+  }
+}
+.p_plat_header{
+  @include setBackground("../image/p_plat.jpg",$blue);
+  @extend .public_header;
+  .drop_down{
+    @extend .p_drop;
+  }
+}
+.p_doctor_header{
+  position: relative;
+  @extend .public_header;
+  @include setMoreBg(none,$blue);
+  .inner{
+    height: 100%;
+    @include setMoreBg("../image/p_d_b.png",none);
+  }
+  .drop_down{
+    @extend .p_drop;
+  }
+}
+.p_dev_header{
+  @include setBackground(none,$dark_gray);
+  .drop_down{
+    @extend .p_drop;
+  }
+}
+
+.state_header{
+  @include setBackground(none,$blue)
+}
+/*首页*/
+.index_header{
+  overflow: hidden;
+  .banner_img_wrapper{
+    width: 750px;
+    margin: 0 auto;
+    position: relative;
+    .index_left_bottom{
+      @include getPosition(left,bottom,-35px)
+    }
+    .index_left_top{
+      @include getPosition(left,top,50px,45px)
+    }
+    .index_center{
+      img{
+        display: block;
+        margin: 0 auto;
+      }
+    }
+    .index_right_bottom{
+      @include getPosition(rigth,bottom,-80px)
+    }
+    .index_right_top{
+      @include getPosition(rigth,top,55px,65px)
+    }
+
+  }
+}
+.nav_wrapper{
+  width: 100%;
+  height: 68px;
+  line-height: 68px;
+  position: relative;
+  .nav li {
+    float: left;
+    width: 157px;
+    text-align: center;
+    position: relative;
+    transition: all 0.25s;
+    a{
+      @include getFont($font14,$white,center);
+      text-decoration: none;
+      display: block;
+    }
+  }
+  .nav>li{
+    &:hover:after{
+      @extend .nav_hover
+    }
+  }
+  .drop_down{
+    background: rgba(255,255,255,0.38);
+    position: absolute;
+    left: 0;
+    top: 68px;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    z-index: 100;
+    li{
+      line-height: 50px;
+      a{
+        @include getFont($font14,$white,center)
+      }
+    }
+  }
+  li.active:after{
+    @extend .nav_hover
+  }
+.logo{
+  img{
+    padding: 10px 0;
+  }
+}
+}
+.banner_wrapper{
+  .banner_text{
+    padding: 130px 0;
+    font-size: 0;
+    h1{
+     @include getFont($font40,$white,center)
+    }
+    p{
+      @include getFont($font20,$white,center);
+      margin-top: 10px;
+    }
+  }
+}
+.index_list{padding:160px 0;}
+.index_content{
+  position: relative;
+  .arrow_down{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    animation:arrow_down 1.5s infinite ease-in;
+  }
+}
+.p_advantage{
+  padding-top: 220px;
+  .p_title{
+    margin-bottom: 90px;
+  }
+  .image_wrapper{
+    margin-bottom: 40px;
+  }
+  .img_wrapper{
+    height: 160px;
+    width: 160px;
+    @include setBackground("../image/Polygon_b.png",none);
+    background-size: contain;
+    padding: 40px 0;
+    margin-bottom: 40px;
+    p{
+      @include getFont($font14,$ligter_white,center)
+    }
+  }
+}
+.p_title{
+  @include getFont($font26,$dark,center);
+  font-weight: bold;
+}
+.list_wrapper{
+  .des_wrapper{
+    h3{
+      @include getFont($font16,$dark,center)
+    }
+    p{
+      @include getFont($font14,$gray);
+      margin-top: 20px;
+      text-align: justify;
+    }
+  }
+  .item{
+    width: 160px;
+    margin-right: (1200px-160px*4)/3;
+    transition: all 0.25s;
+    &:hover{
+      margin-top:-10px;
+      transform: rotateY(360deg);
+    }
+  }
+}
+.p_look{
+  margin-top: 196px;
+  .p_title{
+    margin-bottom: 46px;
+  }
+  .des_wrapper{
+ /*   @include setBackground("../image/home_img_line.png",none);
+    background-size: 90% 57%;
+    background-origin: border-box;*/
+    position: relative;
+    .des_bg{
+      position: absolute;
+      top: 50%;
+      left: 0;
+      margin-top: -125px;
+      z-index: -1;
+      width: 100%;
+      img{
+        position: absolute;
+        left: 132px;
+        top: 0;
+      }
+      .bg_svg{
+        height: 200px;
+        width: 1200px;
+        transform: rotateY(15deg);
+      }
+    }
+    .des_item{
+      width: 25%;
+      h3{
+        @include getFont($font16,$dark,center);
+        margin-bottom: 25px;
+      }
+      p{
+        margin-top: 15px;
+        @include getFont($font14,$gray,left);
+        padding:0 40px;
+      }
+      .center_img{
+        display: block;
+        margin: 0 auto;
+      }
+    }
+    .des_item_first{
+      padding-right:80px;
+      .parent_img{
+        width: 220px;
+      }
+    }
+    .des_item_second{
+      padding-top:60px;
+      padding-right: 100px;
+    }
+    .des_item_third{
+      padding-top: 50px;
+    }
+    .des_item_four{
+     padding-top: 80px;
+    }
+  }
+}
+.p_des{
+  margin-top: 160px;
+  padding-bottom: 180px;
+  .p_title{
+    margin-bottom: 48px;
+  }
+  .des_wrapper{
+    .des_wrapper{
+      margin-left: 113px;
+      padding: 209px 0;
+      h3{
+        @include getFont($font26,$dark)
+      }
+      p{
+        @include getFont($font16,$gray);
+        text-align: justify;
+        margin-top: 40px;
+      }
+    }
+  }
+}
+.footer{
+  height: 120px;
+  width: 100%;
+  background-color: $dark;
+  .footer_nav{
+    text-align: center;
+    padding: 22px 0;
+    text-align: center;
+    font-size: 0;
+    overflow: hidden;
+    li{
+      @include getFont($font14,$white,center);
+      display: block;
+      width: 33.333333333%;
+      a{color: $white}
+    }
+  }
+  .footer_state{
+    p{
+      @include getFont($font12,$gray,center);
+      line-height: 1.5;
+    }
+  }
+}
+/*关于我们*/
+.about_header{
+  .banner_wrapper{
+    .banner_text {
+      h1{
+        @include getFont($font60,$white,center)
+      }
+      p{
+        @include getFont($font20,$white,center);
+      }
+    }
+  }
+}
+.about_content{
+  .aboutUs{
+    width: 100%;
+    height: 958px;
+    box-shadow: 0 10px 40px  rgb(227,232,240);
+    padding: 0 80px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    overflow: auto;
+    margin-bottom: 106px;
+    background: url("../image/about_logo.jpg") no-repeat bottom 40px right 80px;
+  }
+  .about_title{
+    padding: 126px 0 80px 0;
+    .lang_en{
+      @include getFont($font20,$gray,center)
+    }
+    .lang_ch{
+      @include getFont($font40,$dark,center);
+      position: relative;
+      &:after{
+        position: absolute;
+        content: "";
+        left: 50%;
+        margin-left: -49px;
+        bottom: -20px;
+        background: $cyan;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        height: 3px;
+        width: 98px;
+      }
+    }
+  }
+  .about_des{
+    .program{
+      @include getFont($font16,$gray,left);
+      text-align: left;
+      margin-bottom: 30px;
+      text-align: justify;
+      p{text-indent: $font16*2;}
+      span{
+        display: block;
+      }
+    }
+  }
+  blockquote{
+    text-align: right;
+    margin-top: 10px;
+    @include getFont($font16,$dark,right)
+  }
+}
+.about_footer{
+  overflow: hidden;
+  padding: 0 50px;
+  position: relative;
+  margin-bottom: 300px;
+  .img_wrapper{
+    margin-left: 50px;
+    position: relative;
+    .a_mark{
+      position: absolute;
+      left: 300px;
+      bottom: 100px;
+      height: auto;
+      width: 100%;
+      img{
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        max-width: 100%;
+        z-index: 2;
+
+      }
+      .first_child{
+        margin-bottom: -20px;
+        z-index: 3;
+        bottom: 55px;
+        left: -8px;
+      }
+    }
+    img{
+      max-width:100%;
+      height: auto;
+    }
+  }
+  .about_contact{
+    position: absolute;
+    right: 50px;
+    bottom: 50px;
+    h3{
+      @include getFont($font26,$cyan);
+      text-align: left;
+      margin-bottom: 40px;
+    }
+    span{
+      display: block;
+      @include getFont($font14,$gray);
+      text-align: left;
+    }
+  }
+}
+/*法律申明 友情链接 */
+.state_content{
+  margin-top: 40px;
+  .state_nav{
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    width: 260px;
+    li{
+      padding: 16px 0 16px 40px;
+    }
+    li.active{
+      a{  color: $cyan;font-weight: bold}
+      border-left: 4px solid $cyan;
+    }
+    a{
+      color: $white;
+      @include getFont($font14,$gray);
+      display: block;
+      text-align: left;
+    }
+  }
+  .s_body{
+    margin-left: 20px;
+    width: 1200px - 280px;
+    min-height: 721px;
+    .s_title{
+      padding: 18px 0 18px 40px;
+      @include getFont($font26,$dark);
+      border-bottom: 1px solid $white/1.1;
+      text-align: left;
+    }
+    .s_des{
+      padding: 40px;
+      text-align: justify;
+      @include getFont($font16,$gray);
+      p{
+        margin-bottom: 20px;
+        line-height: 1.5;
+        text-indent: $font16*2;
+      }
+      p.title{
+        @include getFont($font16,$dark);
+      }
+    }
+    .state{
+      p{
+        line-height: 1.5;
+        text-indent: $font16*2;
+        span{
+          display: block;
+          margin-left: 8px;
+        }
+      }
+      p.has_sub{
+        span{
+          line-height: 2.5;
+        }
+      }
+    }
+    .link{
+      p{
+        @include getFont($font16,$dark);
+        line-height: 2.5;
+        a{
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}
+.state_header{
+  .drop_down{
+    background: rgba(255,255,255,1)!important;
+    box-shadow: inset 0 0 5px #dddddd;
+    li{
+      a{
+        color: $dark;
+      }
+    }
+  }
+}
+/*健康管理平台*/
+.p_plat_header {
+  .banner_wrapper{
+    padding-top: 120px;
+    .banner_text {
+      h1{
+        @include getFont($font40,$white);
+        margin-bottom: 20px;
+      }
+      p{
+        @include getFont($font20,$white);
+      }
+    }
+  }
+}
+.p_plate_content{
+  /*列表详情*/
+  .detail_list{
+    h1{
+      @include getFont($font40,$cyan,center)
+    }
+    .text_wrapper{
+      padding: 80px 0;
+    }
+    .text_des{
+      margin-bottom: 20px;
+      h3{
+        @include getFont($font26,$dark);
+      }
+      p{
+        @include getFont($font16,$gray);
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+/*医生端*/
+.p_doctor_header{
+  overflow: hidden;
+  .banner_img{
+    position: absolute;
+    right: 170px;
+    bottom: 0;
+    z-index:9;
+    img{
+      display: block;
+    }
+    .p_d_shadow{
+      height: 450px;
+      width: 800px;
+      background:linear-gradient(to right,rgba(0,0,0,0.06),rgba(0,0,0,0));
+      position: absolute;
+      left: -8px;
+      bottom: -160px;
+      z-index: -1;
+      transform:rotate(45deg);
+      border-radius: 120px;
+    }
+  }
+  .banner_text{
+    .img_text{
+      img{
+        display: block;
+      }
+    }
+    p{
+      @include getFont($font20,$white,left);
+      margin-bottom: 45px;
+      margin-top: 27px;
+    }
+  }
+}
+.img_btn {
+  img{
+    padding: 10px 0;
+  }
+  .ios{
+    @extend .downBtn;
+    img{
+      margin-right: 20px;
+    }
+    padding: 0 28px;
+    margin-right: 20px;
+  }
+  .android{
+    @extend  .downBtn;
+    img{
+    margin-right: 5px;
+    }
+    padding: 0 18px;
+  }
+}
+.p_doctor_content{
+  position: relative;
+  .detail_list{
+    padding-bottom: 180px;
+  }
+  .qr_code{
+    padding-bottom: 0;
+    height: 497px;
+    .img_wrapper{
+      padding: 100px 0;
+      img{
+        width: 240px;
+        height: auto;
+        display: block;
+      }
+      p{
+        @include getFont($font26,$dark,center)
+      }
+    }
+    .text_wrapper{
+      padding: 100px 0;
+    }
+  }
+  .text_wrapper{
+      padding: 200px 0;
+    h3{
+      @include getFont($font26,$dark,left);
+      margin-bottom: 40px;
+    }
+    p{
+      @include getFont($font16,$gray,left);
+    }
+  }
+}
+/*用户端*/
+.p_user_header {
+  .inner{
+    background: none;
+  }
+}
+.p_user_content{
+  background-color: $b_gray;
+  .text_wrapper{
+    p{
+      margin-bottom: 20px;
+      span{
+        display: block;
+        @include getFont($font16,$dark,left);
+        &:first-child{
+          @include getFont($font26,$cyan,left);
+          margin-bottom: 10px;
+        }
+      }
+
+    }
+  }
+  .qr_code{
+    .text_wrapper{
+      padding-left: 272px;
+    }
+  }
+}
+/*智能设备*/
+.body{
+  overflow: hidden;
+  height: 100%;
+}
+.p_dev_content{
+  background-color: $dark_gray;
+  position: relative;
+  transition: all 700ms ease;
+  .p_dev_item{
+    padding-top: 130px;
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    .text_des{
+      h1{
+        @include getFont($font40,$white,center);
+      }
+      p{
+        @include getFont($font20,$white,center);
+        margin-top: 10px;
+      }
+      h2{
+        margin-top: 20px;
+        @include getFont($font60,$red,center);
+        span{
+          @include getFont($font26,$white,left)
+        }
+      }
+    }
+  }
+}
+.item_roll{
+  position: fixed;
+  right: 30px;
+  top: 50%;
+  margin-top: -100px;
+  .roll_item{
+    display: block;
+    height: 20px;
+    width: 20px;
+    border-radius: 11px;
+    border: 2px solid white;
+    margin-top: 30px;
+  }
+  .roll_item.active{
+    background: white;
+  }
+}
+/*点击回到顶部*/
+#backTop{
+  position: fixed;
+  right: 0px;
+  bottom: 125px;
+  cursor: pointer;
+}

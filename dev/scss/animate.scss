@@ -1,0 +1,37 @@
+
+@keyframes microtech_menu_hover {
+  from{
+    height: 0;
+  }
+  to{
+    height: 200px;
+  }
+}
+@keyframes microtech_menu_leave {
+  from{
+    height: 200px;
+  }
+  to{
+    height: 0px;
+  }
+}
+@keyframes arrow_down {
+  from{
+    top: 20px;
+    opacity: 0;
+  }
+  to{
+    top: 50px;
+    opacity: 1;
+  }
+}
+.drop_down_hover{
+  transform: translate3d(0,0,0);
+  animation: microtech_menu_hover 0.35s ease-in;
+  animation-fill-mode: forwards;
+}
+.drop_down_leave{
+  transform: translate3d(0,0,0);
+  animation: microtech_menu_leave 0.35s ease-out;
+  animation-fill-mode: forwards;
+}

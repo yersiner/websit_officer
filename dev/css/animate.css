@@ -1,0 +1,55 @@
+@-webkit-keyframes microtech_menu_hover {
+  from {
+    height: 0; }
+  to {
+    height: 200px; } }
+
+@keyframes microtech_menu_hover {
+  from {
+    height: 0; }
+  to {
+    height: 200px; } }
+
+@-webkit-keyframes microtech_menu_leave {
+  from {
+    height: 200px; }
+  to {
+    height: 0px; } }
+
+@keyframes microtech_menu_leave {
+  from {
+    height: 200px; }
+  to {
+    height: 0px; } }
+
+@-webkit-keyframes arrow_down {
+  from {
+    top: 20px;
+    opacity: 0; }
+  to {
+    top: 50px;
+    opacity: 1; } }
+
+@keyframes arrow_down {
+  from {
+    top: 20px;
+    opacity: 0; }
+  to {
+    top: 50px;
+    opacity: 1; } }
+
+.drop_down_hover {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-animation: microtech_menu_hover 0.35s ease-in;
+  animation: microtech_menu_hover 0.35s ease-in;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards; }
+
+.drop_down_leave {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-animation: microtech_menu_leave 0.35s ease-out;
+  animation: microtech_menu_leave 0.35s ease-out;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards; }
